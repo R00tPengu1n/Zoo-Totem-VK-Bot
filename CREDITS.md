@@ -8,13 +8,13 @@ Animal photos are taken from Wikimedia Commons and used under the licenses liste
 
 | Файл | Животное | Автор | Лицензия | Источник |
 |---|---|---|---|---|
-| `manul.jpg` | Манул | — | — | — |
-| `meerkat.jpg` | Сурикат | — | — | — |
-| `capybara.jpg` | Капибара | — | — | — |
-| `lion.jpg` | Лев | — | — | — |
-| `giraffe.jpg` | Жираф | — | — | — |
-| `polar_bear.jpg` | Белый медведь | — | — | — |
-| `flamingo.jpg` | Фламинго | — | — | — |
-| `porcupine.jpg` | Дикобраз | — | — | — |
-| `przewalski_horse.jpg` | Лошадь Пржевальского | — | — | — |
-| `penguin.jpg` | Пингвин Гумбольдта | — | — | — |
+| `manul.jpg` | Манул | Nick Jewell | Creative Commons Attribution 2.0 | https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Otocolobus_manul_at_WHF_Marley_Farm_3_-_January_2009.jpg/960px-Otocolobus_manul_at_WHF_Marley_Farm_3_-_January_2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail |
+| `meerkat.jpg` | Сурикат | Diego Delso | Creative Commons Attribution-Share Alike 4.0 | https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Suricatos_%28Suricata_suricatta%29%2C_parque_nacional_Makgadikgadi_Pans%2C_Botsuana%2C_2018-07-30%2C_DD_24.jpg/960px-Suricatos_%28Suricata_suricatta%29%2C_parque_nacional_Makgadikgadi_Pans%2C_Botsuana%2C_2018-07-30%2C_DD_24.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail |
+| `capybara.jpg` | Капибара | Wilfredor | Creative Commons Zero, Public Domain Dedication | https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Hydrochoeris_hydrochaeris_in_Brazil_in_Petr%C3%B3polis%2C_Rio_de_Janeiro%2C_Brazil_09.jpg/960px-Hydrochoeris_hydrochaeris_in_Brazil_in_Petr%C3%B3polis%2C_Rio_de_Janeiro%2C_Brazil_09.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail |
+| `lion.jpg` | Лев | Clément Bardot | Creative Commons Attribution-Share Alike 4.0 | https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Lion_d%27Afrique.jpg/960px-Lion_d%27Afrique.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail |
+| `giraffe.jpg` | Жираф | Diego Delso | Creative Commons Attribution-Share Alike 4.0 | https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Jirafa_Masai_%28Giraffa_camelopardalis%29%2C_reserva_natural_Mas%C3%A1i_Mara%2C_Kenia%2C_2024-05-20%2C_DD_91.jpg/960px-Jirafa_Masai_%28Giraffa_camelopardalis%29%2C_reserva_natural_Mas%C3%A1i_Mara%2C_Kenia%2C_2024-05-20%2C_DD_91.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail |
+| `polar_bear.jpg` | Белый медведь | Arturo de Frias Marques | Creative Commons Attribution-Share Alike 4.0 | https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Polar_Bear_AdF.jpg/960px-Polar_Bear_AdF.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail |
+| `flamingo.jpg` | Фламинго | Diego Delso | Creative Commons Attribution-Share Alike 4.0 | https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Flamenco_com%C3%BAn_%28Phoenicopterus_roseus%29%2C_parque_nacional_de_Amboseli%2C_Kenia%2C_2024-05-22%2C_DD_36.jpg/960px-Flamenco_com%C3%BAn_%28Phoenicopterus_roseus%29%2C_parque_nacional_de_Amboseli%2C_Kenia%2C_2024-05-22%2C_DD_36.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail |
+| `porcupine.jpg` | Дикобраз | Rufus46 | Creative Commons Attribution-Share Alike 4.0 | https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Weissschwanzstachelschwein_Hystrix_indica_Tierpark_Hellabrunn-14.jpg/960px-Weissschwanzstachelschwein_Hystrix_indica_Tierpark_Hellabrunn-14.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail |
+| `przewalski_horse.jpg` | Лошадь Пржевальского | Photo by David J. Stang | Creative Commons Attribution-Share Alike 4.0 | https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Equus_ferus_przewalskii_2zz.jpg/960px-Equus_ferus_przewalskii_2zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail |
+| `penguin.jpg` | Пингвин Гумбольдта | Anil Öztas | Free Art License | https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Spheniscus_humboldti%2C_Krefeld_%28DE%29_--_2023_--_0025.jpg/960px-Spheniscus_humboldti%2C_Krefeld_%28DE%29_--_2023_--_0025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail |
