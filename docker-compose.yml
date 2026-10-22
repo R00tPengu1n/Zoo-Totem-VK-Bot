@@ -1,0 +1,9 @@
+services:
+  bot:
+    build: .
+    env_file: .env
+    restart: unless-stopped
+    volumes:
+      # База данных и логи хранятся на хосте и не пропадают при пересборке
+      - ./storage:/app/storage
+      - ./logs:/app/logs

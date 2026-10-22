@@ -1,0 +1,16 @@
+[project]
+name = "zoo-totem-vk-bot"
+version = "1.0.0"
+description = "VK-бот-викторина «Какое у вас тотемное животное?» для программы опеки Московского зоопарка"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

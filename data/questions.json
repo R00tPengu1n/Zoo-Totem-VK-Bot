@@ -1,0 +1,91 @@
+[
+  {
+    "id": "home",
+    "text": "Начнём с главного. Где тебе было бы уютнее всего жить?",
+    "options": [
+      {"text": "В горах, где тихо и никого", "weights": {"manul": 3, "przewalski_horse": 1}},
+      {"text": "У тёплой воды", "weights": {"capybara": 2, "flamingo": 3, "penguin": 2}},
+      {"text": "Во льдах, жара — не моё", "weights": {"polar_bear": 3}},
+      {"text": "В саванне, с видом на горизонт", "weights": {"giraffe": 2, "lion": 2, "meerkat": 1}},
+      {"text": "В уютной норе", "weights": {"porcupine": 3, "meerkat": 2}}
+    ]
+  },
+  {
+    "id": "friday",
+    "text": "Пятница, рабочая неделя позади. Какой у тебя план на вечер?",
+    "options": [
+      {"text": "Шумная компания друзей", "weights": {"meerkat": 3, "penguin": 2, "lion": 1}},
+      {"text": "Ванна, сериал и никого не трогать", "weights": {"capybara": 3, "manul": 2}},
+      {"text": "Свидание в красивом месте", "weights": {"flamingo": 3, "penguin": 1}},
+      {"text": "Пробежка или поход за город", "weights": {"przewalski_horse": 3, "giraffe": 1}},
+      {"text": "Лечь спать в восемь. Я заслужил", "weights": {"lion": 3, "porcupine": 1}}
+    ]
+  },
+  {
+    "id": "superpower",
+    "text": "Какая у тебя суперсила на работе?",
+    "options": [
+      {"text": "Замечаю проблемы раньше всех", "weights": {"meerkat": 3, "giraffe": 2}},
+      {"text": "Веду команду за собой", "weights": {"lion": 3}},
+      {"text": "Не паникую ни в каком аврале", "weights": {"capybara": 3, "polar_bear": 1}},
+      {"text": "Умею говорить «нет»", "weights": {"porcupine": 3, "manul": 2}},
+      {"text": "Справляюсь в любых условиях", "weights": {"przewalski_horse": 3, "polar_bear": 2}}
+    ]
+  },
+  {
+    "id": "personal_space",
+    "text": "Кто-то бесцеремонно вторгся в твоё личное пространство. Твоя реакция?",
+    "options": [
+      {"text": "Молча смотрю. Обычно хватает", "weights": {"manul": 3}},
+      {"text": "Выпускаю колючки", "weights": {"porcupine": 3}},
+      {"text": "Да садись, места всем хватит", "weights": {"capybara": 3}},
+      {"text": "Зову своих", "weights": {"meerkat": 2, "penguin": 2, "lion": 1}},
+      {"text": "Грациозно отхожу в сторону", "weights": {"giraffe": 2, "flamingo": 2, "przewalski_horse": 1}}
+    ]
+  },
+  {
+    "id": "food",
+    "text": "Без чего не обходится твоё идеальное меню?",
+    "options": [
+      {"text": "Мясо, и побольше", "weights": {"lion": 3, "polar_bear": 2, "manul": 1}},
+      {"text": "Рыба и морепродукты", "weights": {"penguin": 3, "polar_bear": 2, "flamingo": 1}},
+      {"text": "Свежие овощи и фрукты", "weights": {"porcupine": 2, "capybara": 1, "przewalski_horse": 2}},
+      {"text": "Что-нибудь экзотическое", "weights": {"meerkat": 3, "flamingo": 1}},
+      {"text": "Зелень с самой верхней полки", "weights": {"giraffe": 3}}
+    ]
+  },
+  {
+    "id": "style",
+    "text": "Как бы ты описал свой стиль?",
+    "options": [
+      {"text": "Ярко, люблю внимание", "weights": {"flamingo": 3}},
+      {"text": "Тёплое и пушистое", "weights": {"manul": 3, "polar_bear": 2}},
+      {"text": "Классика: чёрное и белое", "weights": {"penguin": 3}},
+      {"text": "Удобно и практично", "weights": {"przewalski_horse": 3, "meerkat": 1, "capybara": 1}},
+      {"text": "С характером. И с шипами", "weights": {"porcupine": 3}},
+      {"text": "Длинное и элегантное", "weights": {"giraffe": 2, "flamingo": 1}}
+    ]
+  },
+  {
+    "id": "motto",
+    "text": "Какой девиз тебе ближе?",
+    "options": [
+      {"text": "Свобода дороже всего", "weights": {"przewalski_horse": 3}},
+      {"text": "Вместе мы сила", "weights": {"meerkat": 2, "penguin": 3, "lion": 1}},
+      {"text": "Спешка — враг удовольствия", "weights": {"capybara": 2, "lion": 1}},
+      {"text": "Холодная голова, тёплое сердце", "weights": {"polar_bear": 3}},
+      {"text": "Смотри на мир шире", "weights": {"giraffe": 3}}
+    ]
+  },
+  {
+    "id": "vacation",
+    "text": "И последний вопрос. Где пройдёт твой идеальный отпуск?",
+    "options": [
+      {"text": "На пляже у моря", "weights": {"penguin": 2, "flamingo": 3, "capybara": 1}},
+      {"text": "В горах, с палаткой и звёздами", "weights": {"manul": 2, "przewalski_horse": 2}},
+      {"text": "На севере, под северным сиянием", "weights": {"polar_bear": 3}},
+      {"text": "На сафари", "weights": {"lion": 2, "giraffe": 2, "meerkat": 1}},
+      {"text": "Дома, под пледом", "weights": {"porcupine": 2, "manul": 1, "capybara": 1}}
+    ]
+  }
+]
