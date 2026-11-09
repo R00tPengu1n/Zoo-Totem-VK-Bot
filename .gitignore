@@ -16,4 +16,5 @@ __pycache__/
 # Данные бота
 storage/
 logs/
+.vkbottle/
 *.db
