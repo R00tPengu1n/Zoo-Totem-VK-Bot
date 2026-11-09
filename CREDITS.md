@@ -4,6 +4,8 @@
 
 Animal photos are taken from [Wikimedia Commons](https://commons.wikimedia.org/) and used under the licenses listed below. The images were not modified except for resizing.
 
+Лицензия MIT из файла [LICENSE](LICENSE) относится только к коду: фотографии остаются под своими лицензиями из таблицы ниже. / The MIT license in [LICENSE](LICENSE) covers the code only: the photos keep their own licenses listed below.
+
 | Файл | Животное | Автор | Лицензия | Источник |
 |---|---|---|---|---|
 | `manul.jpg` | Манул | Nick Jewell | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Otocolobus_manul_at_WHF_Marley_Farm_3_-_January_2009.jpg) |
