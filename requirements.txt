@@ -1,0 +1,6 @@
+aiohttp>=3.9,<4
+aiosqlite>=0.20,<1
+pydantic>=2.7,<3
+pydantic-settings>=2.3,<3
+SQLAlchemy[asyncio]>=2.0.30,<3
+vkbottle>=4.3,<5

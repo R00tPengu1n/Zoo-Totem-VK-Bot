@@ -1,0 +1,20 @@
+# Окружение и секреты
+.venv/
+venv/
+.env
+
+# IDE
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Данные бота
+storage/
+logs/
+.vkbottle/
+*.db
