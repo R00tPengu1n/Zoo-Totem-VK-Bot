@@ -13,6 +13,7 @@ import time
 from collections.abc import Awaitable, Callable
 from typing import Any
 
+from vkbottle import VKAPIError
 from vkbottle.bot import Message
 
 from bot import texts
@@ -22,6 +23,23 @@ logger = logging.getLogger("bot.monitoring")
 
 Handler = Callable[..., Awaitable[Any]]
 
+# Ошибки VK, которые вызваны настройками группы, а не кодом бота
+VK_ERROR_HINTS = {
+    912: (
+        "В группе выключены возможности ботов, поэтому VK не принимает сообщения "
+        "с кнопками. Включи их: Управление → Сообщения → Настройки для бота → "
+        "включить возможности ботов"
+    ),
+}
+
+
+def error_hint(error: BaseException) -> str | None:
+    """Подсказка, как исправить ошибку, или None, если подсказки нет."""
+    if isinstance(error, VKAPIError):
+        # У базового VKAPIError (без конкретного кода) атрибута code нет
+        return VK_ERROR_HINTS.get(getattr(error, "code", None))
+    return None
+
 
 def monitored(handler: Handler) -> Handler:
     @functools.wraps(handler)
@@ -29,11 +47,13 @@ def monitored(handler: Handler) -> Handler:
         started = time.perf_counter()
         try:
             return await handler(message, *args, **kwargs)
-        except Exception:
+        except Exception as error:
+            hint = error_hint(error)
             logger.exception(
-                "Ошибка в обработчике %s (пользователь id%s)",
+                "Ошибка в обработчике %s (пользователь id%s)%s",
                 handler.__name__,
                 message.from_id,
+                f". {hint}" if hint else "",
             )
             try:
                 await message.answer(texts.ERROR)
