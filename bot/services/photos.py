@@ -12,10 +12,11 @@
 import asyncio
 import hashlib
 import logging
+from collections.abc import Iterable
 from pathlib import Path
 
 import aiohttp
-from vkbottle import API
+from vkbottle import API, VKAPIError
 
 from bot.db.repository import Repository
 from bot.services.content import Animal
@@ -23,10 +24,27 @@ from bot.services.content import Animal
 logger = logging.getLogger(__name__)
 
 UPLOAD_TIMEOUT = aiohttp.ClientTimeout(total=30)
+UPLOAD_ATTEMPTS = 3
+RETRY_DELAY = 2.0  # секунды между попытками
 
 
 class PhotoUploadError(Exception):
     """Не удалось загрузить фотографию в VK."""
+
+
+# Временные ошибки VK: 1 — неизвестная ошибка, 6 — слишком много запросов,
+# 9 — флуд-контроль, 10 — внутренняя ошибка сервера. Остальные (неверный
+# ключ, нет доступа, неверный параметр) повтором не исправить.
+RETRYABLE_VK_CODES = frozenset({1, 6, 9, 10})
+# Пустой ответ сервера загрузки, сбои сети и таймауты
+TRANSIENT_ERRORS = (PhotoUploadError, aiohttp.ClientError, TimeoutError)
+
+
+def is_transient(error: BaseException) -> bool:
+    """Имеет ли смысл повторить загрузку после этой ошибки."""
+    if isinstance(error, VKAPIError):
+        return getattr(error, "code", None) in RETRYABLE_VK_CODES
+    return isinstance(error, TRANSIENT_ERRORS)
 
 
 def file_sha256(path: Path) -> str:
@@ -58,15 +76,50 @@ class PhotoService:
                 if cached:
                     return cached
 
-                attachment = await self._upload(path, peer_id)
-                await self._repository.save_cached_photo(
-                    animal.id, file_hash, attachment
-                )
+                attachment = await self._upload_with_retry(path, peer_id)
+                await self._repository.save_cached_photo(animal.id, file_hash, attachment)
                 logger.info("Фото «%s» загружено в VK: %s", animal.id, attachment)
                 return attachment
             except Exception:
                 logger.exception("Не удалось подготовить фото для «%s»", animal.id)
                 return None
+
+    async def preload(self, animals: Iterable[Animal]) -> None:
+        """Заранее загружает в VK фото, которых ещё нет в кэше.
+
+        Первая загрузка занимает несколько секунд, поэтому делаем её при
+        запуске, а не когда пользователь ждёт результат. peer_id=0: фото
+        загружается для сообщений сообщества без привязки к диалогу.
+        """
+        animals = list(animals)
+        loaded = 0
+        for animal in animals:
+            if await self.get_attachment(animal, peer_id=0):
+                loaded += 1
+        logger.info("Предзагрузка фото завершена: готово %d из %d", loaded, len(animals))
+
+    async def _upload_with_retry(self, path: Path, peer_id: int) -> str:
+        """Загружает фото, повторяя попытку при временных сбоях VK или сети.
+
+        VK иногда без причины возвращает пустое поле photo, поэтому каждая
+        попытка начинается заново, с нового адреса для загрузки. Если все
+        попытки неудачны, пробрасывает ошибку последней попытки.
+        """
+        for attempt in range(1, UPLOAD_ATTEMPTS):
+            try:
+                return await self._upload(path, peer_id)
+            except Exception as error:
+                if not is_transient(error):
+                    raise
+                logger.warning(
+                    "Попытка %d из %d загрузить %s не удалась: %r",
+                    attempt,
+                    UPLOAD_ATTEMPTS,
+                    path.name,
+                    error,
+                )
+                await asyncio.sleep(RETRY_DELAY)
+        return await self._upload(path, peer_id)
 
     async def _upload(self, path: Path, peer_id: int) -> str:
         server = await self._api.photos.get_messages_upload_server(peer_id=peer_id)
