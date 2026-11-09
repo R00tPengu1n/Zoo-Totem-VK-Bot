@@ -38,9 +38,7 @@ async def forward_question(message: Message) -> None:
 
     animal = await get_last_animal(message.from_id)
     user_name = await notifier.get_user_name(message.from_id)
-    is_sent = await notifier.send(
-        texts.admin_message(message.from_id, user_name, animal, text)
-    )
+    is_sent = await notifier.send(texts.admin_message(message.from_id, user_name, animal, text))
 
     await state_dispenser.delete(message.peer_id)
     reply = texts.CONTACT_SENT if is_sent else texts.contact_failed(settings.contact_email)

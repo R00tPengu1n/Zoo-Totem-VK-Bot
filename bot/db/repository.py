@@ -51,9 +51,7 @@ class Repository:
                 return None
             return cached.attachment
 
-    async def save_cached_photo(
-        self, animal_id: str, file_hash: str, attachment: str
-    ) -> None:
+    async def save_cached_photo(self, animal_id: str, file_hash: str, attachment: str) -> None:
         async with self._session_factory() as session:
             await session.merge(
                 PhotoCache(
@@ -67,9 +65,7 @@ class Repository:
     async def get_stats(self) -> Stats:
         async with self._session_factory() as session:
             total_results = await session.scalar(select(func.count(QuizResult.id)))
-            unique_users = await session.scalar(
-                select(func.count(distinct(QuizResult.user_id)))
-            )
+            unique_users = await session.scalar(select(func.count(distinct(QuizResult.user_id))))
             feedback_count = await session.scalar(select(func.count(Feedback.id)))
 
             count_column = func.count(QuizResult.id).label("count")

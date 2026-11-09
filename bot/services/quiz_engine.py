@@ -41,9 +41,5 @@ def pick_animal(
     rng = rng or random.Random()
     known_scores = {animal_id: scores.get(animal_id, 0) for animal_id in animal_ids}
     best_score = max(known_scores.values())
-    leaders = [
-        animal_id
-        for animal_id, score in known_scores.items()
-        if score == best_score
-    ]
+    leaders = [animal_id for animal_id, score in known_scores.items() if score == best_score]
     return rng.choice(leaders)

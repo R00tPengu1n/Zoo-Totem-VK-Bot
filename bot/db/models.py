@@ -25,9 +25,7 @@ class QuizResult(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     user_id: Mapped[int] = mapped_column(BigInteger, index=True)
     animal_id: Mapped[str] = mapped_column(String(64), index=True)
-    created_at: Mapped[datetime] = mapped_column(
-        DateTime(timezone=True), default=utc_now
-    )
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)
 
 
 class Feedback(Base):
@@ -36,9 +34,7 @@ class Feedback(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     user_id: Mapped[int] = mapped_column(BigInteger, index=True)
     text: Mapped[str] = mapped_column(Text)
-    created_at: Mapped[datetime] = mapped_column(
-        DateTime(timezone=True), default=utc_now
-    )
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)
 
 
 class PhotoCache(Base):
@@ -53,6 +49,4 @@ class PhotoCache(Base):
     animal_id: Mapped[str] = mapped_column(String(64), primary_key=True)
     file_hash: Mapped[str] = mapped_column(String(64))
     attachment: Mapped[str] = mapped_column(String(255))
-    uploaded_at: Mapped[datetime] = mapped_column(
-        DateTime(timezone=True), default=utc_now
-    )
+    uploaded_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)

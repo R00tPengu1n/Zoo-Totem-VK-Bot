@@ -82,20 +82,12 @@ def cancel() -> str:
 
 def guardianship_link(url: str) -> str:
     """Кнопка-ссылка прямо под сообщением (inline-клавиатура)."""
-    return (
-        Keyboard(inline=True)
-        .add(OpenLink(url, texts.BTN_BECOME_GUARDIAN))
-        .get_json()
-    )
+    return Keyboard(inline=True).add(OpenLink(url, texts.BTN_BECOME_GUARDIAN)).get_json()
 
 
 def share_links(share_text: str, bot_link: str) -> str:
-    vk_url = "https://vk.com/share.php?" + urlencode(
-        {"url": bot_link, "title": share_text}
-    )
-    telegram_url = "https://t.me/share/url?" + urlencode(
-        {"url": bot_link, "text": share_text}
-    )
+    vk_url = "https://vk.com/share.php?" + urlencode({"url": bot_link, "title": share_text})
+    telegram_url = "https://t.me/share/url?" + urlencode({"url": bot_link, "text": share_text})
     return (
         Keyboard(inline=True)
         .add(OpenLink(vk_url, texts.BTN_SHARE_VK))

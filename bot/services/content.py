@@ -87,8 +87,7 @@ def _check_consistency(content: QuizContent, images_dir: Path | None) -> None:
     for animal in content.animals.values():
         if not (images_dir / animal.image).is_file():
             raise ContentError(
-                f"Нет фотографии для животного «{animal.id}»: "
-                f"{images_dir / animal.image}"
+                f"Нет фотографии для животного «{animal.id}»: {images_dir / animal.image}"
             )
 
 
